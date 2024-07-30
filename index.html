@@ -1,0 +1,308 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
+
+  <script src="./scripts/subscrs.js" defer></script>
+  <script src="./scripts/addedFiles.js" defer></script>
+  <script type="text/javascript" src="./scripts/dragDrop.js" defer></script>
+  <script type="text/javascript" src="./scripts/jquery-3.3.1.min.js"></script>
+  <title>Document store</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <div class="header-wrapper">
+        <a href="/" class="main-logo">
+          <img src="./img/emptyLogo.png" width="70" height="70">
+        </a>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="#subscrs">Подписки</a></li>
+            <li><a href="#promo">Промокоды</a></li>
+            <li><a href="#shop">Услуги</a></li>
+            <li><a href="autorization.html">Учетная запись</a></li>
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- <section class="section">
+      <div class="container">
+        <div class="title-wrapper">
+          <h2 class="section-title">Загрузки</h2>
+        </div>
+          <div class="comments">
+            <input type="file" class="addfile">
+            <ul class="dwldInfo" >
+              <li><a>Страниц на балансе: 15</a></li>
+              <li><a>Подписка: Advanced</a></li>
+            </ul>
+            <div class="comment">
+
+              <div class="adder-wrapper">
+                <div class="logo">
+                  <svg class="svg-icon">
+                    <use xlink:href="#icon-add"></use>
+                  </svg>
+                </div>                 
+                <div class="comment-body">
+                  <p class="comment-text">Перетащите файлы или кликните, чтобы загрузить</p>
+                </div>
+              </div>
+            </div>
+            <ul id="addedFiles">
+
+            </ul>
+            <button class="btn btn-outline-info w-100 mb-2" id="addFile">
+              Добавить
+            </button>
+            <span class="btn btn-small btn-danger"  id='removeFiles'>&times;</span>
+            <div class="formatSelectorWrapper">
+              <select name="choice" class="formatSelector">
+                <option value="first" selected>
+                  <p class="formatSelector-text">PDF</p>
+                </option>
+                <option value="second">RTF</option>
+                <option value="third">SVO</option>
+              </select>
+            </div>
+        </div>
+    </section> -->
+    <section class="section">
+      <div class="container">
+        <div class="title-wrapper">
+          <h2 class="section-title">Загрузки</h2>
+        </div>
+          <div class="comments">
+            <!-- <input type="file" class="addfile"> -->
+            <ul class="dwldInfo" >
+              <li><a>Страниц на балансе: 15</a></li>
+              <li><a>Подписка: Advanced</a></li>
+            </ul>
+            <div class="upload-wrapper">
+              <form id="upload-container">
+
+                <img id="upload-image" src="img/addpicsvg.svg">
+                <div>
+                    <input id="file-input" type="file" name="file" multiple >
+                    <label for="file-input">Выберите файл</label>
+                    <span>или перетащите его сюда</span>
+                </div>
+              </form>
+            </div>
+            <ul id="addedFiles">
+
+            </ul>
+
+            <span class="btn btn-small btn-danger"  id='removeFiles'>&times;</span>
+            <div class="formatSelectorWrapper">
+              <select name="choice" class="formatSelector">
+                <option value="first" selected>
+                  <p class="formatSelector-text">PDF</p>
+                </option>
+                <option value="second">RTF</option>
+                <option value="third">SVO</option>
+              </select>
+              <a href="#" class="confirmTransaction-btn">Конвертировать</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" id="subscrs">
+      <div class="container">
+        <div class="title-wrapper">
+          <h2 class="section-title">Подписки</h2>
+        </div>
+        <div class="subscrsWrapper" id="currentSubscrs">
+          <!-- <div class="subscrContainer">
+            <div class="subscrWrapper">
+              <div class="subscrTitlewrapper">
+                <h2 class="subscrTitle">Advanced</h2>
+              </div>
+              <div class="subscrPrice">
+                <p class="subscrPriceText">50 руб.</p>
+                <p class="subscrPriceDesc">Девствует суйтки</p>
+              </div>
+              <div class="tarif-wrpper">
+                <p class="tarifPagesPerDay">15 страниц в день</p>
+                <p class="tarifPagesPerMessage">10 страниц за сообщение</p>
+              </div>
+              <a href="#" class="subscrBuyBtn">Покупить</a>
+            </div>
+          </div> -->
+        </div>
+        <button class="btn btn-outline-info w-100 mb-2 m-5" id="createSubscr">
+          Добавить
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="container">
+        <div class="title-wrapper">
+          <h2 class="section-title">Покупка страниц</h2>
+        </div>
+        <div class="shop-wrapper">
+          <div class="shop-container">
+            <div class="shopColoumns-wrapper">
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-names"> Страницы:</p>
+                  <p class="shopColoumn-names"> Цена:</p>
+                </div>
+              </div>
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-pages"> 5 страниц</p>
+                  <p class="shopColoumn-price"> 5 рублей</p>
+                  <a href="#" class="shopBuyBtn">Купить</a>
+                </div>
+              </div>
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-pages"> 10 страниц</p>
+                  <p class="shopColoumn-price"> 10 рублей</p>
+                  <a href="#" class="shopBuyBtn">Купить</a>
+                </div>
+              </div>
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-pages"> 20 страниц</p>
+                  <p class="shopColoumn-price"> 15 рублей</p>
+                  <a href="#" class="shopBuyBtn">Купить</a>
+                </div>
+              </div>
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-pages"> 50 страниц</p>
+                  <p class="shopColoumn-price"> 30 рублей</p>
+                  <a href="#" class="shopBuyBtn">Купить</a>
+                </div>
+              </div>
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-pages"> 100 страниц</p>
+                  <p class="shopColoumn-price"> 50 рублей</p>
+                  <a href="#" class="shopBuyBtn">Купить</a>
+                </div>
+              </div>
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-pages"> 200 страниц</p>
+                  <p class="shopColoumn-price"> 90 рублей</p>
+                  <a href="#" class="shopBuyBtn">Купить</a>
+                </div>
+              </div>
+              <div class="shopColoumn-container">
+                <div class="shopColoumn">
+                  <p class="shopColoumn-pages"> 500 страниц</p>
+                  <p class="shopColoumn-price"> 150 рублей</p>
+                  <a href="#" class="shopBuyBtn">Купить</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="promo">
+      <div class="container">
+        <div class="promo-wrapper">
+          <h2 class="promo-text">Ввести промокод:</h2>
+          <input type="text" class="inputPromo" id="inputPromo"/>
+          <a href="#" class="inputPromo-btn">Применить</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="container w-60 pt-5">
+      <input
+      type="text"
+      class="form-control mb-2"
+      placeholder="Введите название"
+      id="title"
+      />
+      <ul class="subs" id="subscriptions"></ul>
+      <button class="btn btn-outline-info w-100 mb-2" id="create">
+        Добавить
+      </button>
+    </div>
+  </main> -->
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-wrapper">
+        <div class="footer-coloumn">
+          <!-- <a href="/" class="main-logo">
+            <img src="./img/emptyLogo.png" width="50" height="50">
+          </a> -->
+          <ul class="footer-nav">
+            <li><h4 class="footer-title">Информация</h4></li>
+            <li><a href="#!">Промокоды</a></li>
+            <li><a href="#!">Реферальная программа</a></li>
+          </ul>
+        </div>
+        <div class="footer-coloumn">
+          <ul class="footer-nav">
+            <li><h4 class="footer-title">Помощь</h4></li>
+            <li><a href="#!">Пользовательское соглашение</a></li>
+            <li><a href="#!">Публичная оферта</a></li>
+          </ul>
+        </div>
+        <div class="footer-coloumn">
+          <h4 class="footer-title">Контакты</h4>
+          <p class="footer-text custom">+79022846218</p>
+          <p class="footer-text custom">supportocr@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/svg">
+    <defs>
+      <symbol id="icon-down" viewBox="0 0 11 6" fill="none">
+        <path d="M5.5 6L0.736861 -8.97232e-07L10.2631 -6.44184e-08L5.5 6Z" fill="#A5A5A5"/>
+      </symbol>
+      <symbol  id="icon-add" viewBox="0 0 79 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M40 18.25H14.5833C9.98096 18.25 6.25 21.981 6.25 26.5833V67.4167C6.25 72.019 9.98096 75.75 14.5833 75.75H55.4167C60.019 75.75 63.75 72.019 63.75 67.4167V39H58.75V67.4167C58.75 69.2576 57.2576 70.75 55.4167 70.75H14.5833C12.7424 70.75 11.25 69.2576 11.25 67.4167V26.5833C11.25 24.7424 12.7424 23.25 14.5833 23.25H40V18.25Z" fill="black"/>
+        <path d="M24.7917 41.1667C27.208 41.1667 29.1667 39.2079 29.1667 36.7917C29.1667 34.3754 27.208 32.4167 24.7917 32.4167C22.3755 32.4167 20.4167 34.3754 20.4167 36.7917C20.4167 39.2079 22.3755 41.1667 24.7917 41.1667Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M61.2499 55.75L46.6666 41.1667L14.5833 73.25" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g clip-path="url(#clip0_7_66)">
+        <path d="M60.4999 33.9167C69.0143 33.9167 75.9166 27.0144 75.9166 18.5C75.9166 9.98561 69.0143 3.08333 60.4999 3.08333C51.9855 3.08333 45.0833 9.98561 45.0833 18.5C45.0833 27.0144 51.9855 33.9167 60.4999 33.9167Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M60.5 12.3333V24.6667" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M54.3333 18.5H66.6666" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_7_66">
+        <rect width="37" height="37" fill="white" transform="translate(42)"/>
+        </clipPath>
+        </defs>
+        </symbol>
+        <symbol id="icon-plus" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_27_30)">
+          <path d="M18.4999 33.9167C27.0143 33.9167 33.9166 27.0144 33.9166 18.5C33.9166 9.98561 27.0143 3.08333 18.4999 3.08333C9.98553 3.08333 3.08325 9.98561 3.08325 18.5C3.08325 27.0144 9.98553 33.9167 18.4999 33.9167Z" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18.5 12.3333V24.6667" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12.3333 18.5H24.6666" stroke="black" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_27_30">
+          <rect width="37" height="37" fill="white"/>
+          </clipPath>
+          </defs>
+          </symbol>
+    </defs>
+  </svg>
+</body>
+  <!-- <svg class="svg-icon">
+    <use xlink:href="#icon-down"></use>
+  </svg> -->
+</html>
